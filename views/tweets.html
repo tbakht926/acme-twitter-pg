@@ -1,0 +1,12 @@
+{% extends './layout.html' %}
+	<ul>
+	{% block content %}
+		{% for tweet in tweets %}
+			<li>
+				<a href='/tweets/{{tweet.id}}'>
+				{{ tweet.handle }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
