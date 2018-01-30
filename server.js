@@ -22,9 +22,12 @@ app.get('/', (req, res, next)=> {
 
 app.use('/tweets', require('./routes/tweets'));
 
-db.sync((err)=> { if(err) return console.log(err)});
-
-db.seed((err,tweets)=>{ if(err) return console.log(err)});
+db.sync((err) => {
+  if (err) return console.log(err);
+  db.seed((err) => {
+    if (err) return console.log(err);
+  });
+});
 
 const port = process.env.PORT || 3000;
 

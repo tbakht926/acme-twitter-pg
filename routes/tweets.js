@@ -6,7 +6,7 @@ module.exports = app;
 app.get('/', (req, res, next)=> {
 	db.getTweets((err, tweets)=> {
 		if(err) return next(err);
-		res.render('tweets', { title: 'Tweets', tweets: tweets});
+		res.render('tweets', { title: 'Tweets', tweets:tweets});
 	});
 });
 

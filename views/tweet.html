@@ -1,13 +1,6 @@
 {% extends './layout.html' %}
 {% block content %}
 	<div class="jumbotron">
-	{% for tweet in tweets %}
-		<li>
-			<a href='/tweets/{{tweet.id}}'>
-			{{ tweet.tweet }}
-			</a>
-		</li>
-	{% endfor %}
+		"Tweet tweet" by {{tweet}}
 	</div>
-<a href='/tweets'>Back to all tweets</a>
 {% endblock %}
