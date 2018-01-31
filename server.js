@@ -4,12 +4,15 @@ const nunjucks = require('nunjucks');
 const path = require('path');
 nunjucks.configure({ noCache: true });
 const db = require('./db');
+const favicon = require('serve-favicon')
 
 
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
 app.use('/vendor', express.static(path.join(__dirname, 'node_modules')));
+
+app.use(favicon(path.join(__dirname, '/views', 'favicon.ico')))
 
 app.use((req, res, next)=> {
 	res.locals.path = req.url;
